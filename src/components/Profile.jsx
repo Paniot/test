@@ -1,4 +1,5 @@
-import Picture from './../img/profile.jpg'
+import Picture from './../img/profile.jpg';
+import './Profile.css'
 
 const Profile = () => {
   return (

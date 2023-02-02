@@ -1,0 +1,16 @@
+.nav {
+    grid-area: n;
+    background-color: red;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-size: 26px;
+    margin-left: 20px;
+    transition: 0.5s;
+}
+
+.nav a:hover {
+    color: rgb(121, 95, 95);
+}

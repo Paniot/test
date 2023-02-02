@@ -3,7 +3,6 @@ body{
   color: #f1f1f1;
 }
 
-
 .app-wrapper{
   display:grid;
   margin: 0 auto;
@@ -13,46 +12,4 @@ body{
   "n c";
   grid-template-rows: 60px 2fr;
   grid-template-columns: 2fr 10fr;
-}
-
-.header{
-  grid-area: h;
-  background-color: green;
-}
-
-
-.nav{
-  grid-area: n;
-  background-color: red;
-}
-
-.content{
-  grid-area: c;
-  background-color: blue;
-};
-
-.content-img{
-  max-width: 1200px;
-  width: 300px;
-}
-
-.image{
-  max-width: 1000px;
-}
-
-.nav a{
-  text-decoration: none;
-  color: #f1f1f1;
-  font-size: 26px;
-  margin-left: 20px;
-  transition: 0.5s;
-}
-
-.nav a:hover{
-  color: rgb(121, 95, 95);
-}
-
-.header img{
-  width: 50px;
-  margin: 5px 10px;
 }
