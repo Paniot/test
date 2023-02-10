@@ -1,6 +1,6 @@
 body {
-  background-color: #212020;
-  color: #f1f1f1;
+  background-color:#FFFCD9;
+  color: black;
 }
 
 .app-wrapper {
@@ -16,5 +16,5 @@ body {
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: blue;
+    background-color: rgb(203, 205, 204);;
 }
