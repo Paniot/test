@@ -1,0 +1,15 @@
+
+textarea{
+    width: 400px;
+    height: 40px;
+}
+
+.label{
+    text-align: center;
+    font-size: 40px;
+    text-transform:uppercase;
+}
+
+.posts{
+    padding-top: 15px;
+}

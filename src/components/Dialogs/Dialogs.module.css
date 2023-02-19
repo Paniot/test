@@ -1,0 +1,69 @@
+.dialogs{
+    padding: 10px 10px;
+    background-color: rgb(203, 205, 204);
+    display: grid;
+    grid-template-columns: 5fr 15fr;
+}
+
+
+
+.dialog{
+    color: black;
+    text-decoration-line: none;
+    cursor: alias;
+    font-size: 26px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dialog:before{
+    background-image: url(./avatar/logo.png);
+    background-size: cover;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    content: '';
+    margin-right: 15px;
+}
+
+.active{
+    color: gold;
+    text-decoration-line: none;
+    cursor: alias;
+    padding-bottom: 30px;
+}
+
+
+.message{
+    color: black;
+    display: flex;
+}
+
+.message::before{
+    background-image: url(./avatar/logo.png);
+    background-size: cover;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    content: '';
+}
+
+.messages textarea{
+    margin-top: 20px;
+    width: 720px;
+}
+
+.messages{
+    position: relative;
+}
+
+.workingArea {
+    bottom: 0px;
+    position: absolute;
+}
+
+.workingArea button{
+    position: absolute;
+    right: 0px;
+}

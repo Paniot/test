@@ -1,0 +1,17 @@
+.item {
+    max-width: 1000px;
+    margin-top: 10px;
+}
+
+.image{
+    width: 40px;
+    border-radius: 15px;
+}
+
+span{
+    padding: 1px 10px;
+    color: rgb(150, 28, 28);
+    background: #f1f1f1;
+    border-radius: 5px;
+    margin-right: 5px;
+}
