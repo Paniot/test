@@ -2,17 +2,16 @@ import p from './PostInfo.module.css';
 import React from 'react';
 
 const PostInfo = (props) => {
-  
+  debugger
   let newPostText = React.createRef();
 
   const onAddPost = () => {
-    debugger;
-    props.addPost()
+    props.dispatch({type: 'ADD-POST'})
   }
 
   let onPostChange = () => {
     let text = newPostText.current.value;
-    props.updateNewPostText(text);
+    props.dispatch({type: 'UPDATE-NEW-POST-TEXT' ,newText: text} );
   }
 
   return (

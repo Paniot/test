@@ -3,7 +3,7 @@ import Post from './Post/Post';
 import PostInfo from './Post/Postinfo/PostInfo';
 
 const MyPosts = (props) => {
-
+ 
   let postsData = props.postData.map(p => <Post message={p.message} name={p.name} likesCounter={p.likesCounter} />)
 
   return (
@@ -11,7 +11,7 @@ const MyPosts = (props) => {
       <div className={p.label}>
         My Posts
       </div>
-      <PostInfo updateNewPostText={props.updateNewPostText} newPostText={props.newPostText} addPost={props.addPost} />
+      <PostInfo dispatch={props.dispatch} newPostText={props.newPostText} />
       <div className={p.posts}>
         {postsData}
       </div>

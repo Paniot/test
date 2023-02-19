@@ -11,7 +11,7 @@ let store = {
                 { id: 7, message: 'It is second post', name: 'Vlad', likesCounter: 20 },
                 { id: 8, message: 'It is second post', name: 'Vlad', likesCounter: 20 },
             ],
-            newPostText: 'lknl',
+            newPostText: 'Hello',
         },
         dialogsPage: {
             dialogsData: [
@@ -40,36 +40,39 @@ let store = {
             ],
         }
     },
+    _callSubscriber() {
+        alert('State Changed')
+    },
     getState() {
-        debugger;  
         return this._state
     },
-    _callSubscriber() {
-        console.log('State Changed')
-    },
     addPost() {
-        debugger
-        let newPost = {
-            id: 9,
-            message: this._state.profilePage.newPostText,
-            name: 'Denis',
-            likesCounter: 23
-        };
-
-        this._state.profilePage.postData.unshift(newPost)
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state)
     },
     updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state)
     },
     subscribe(observer) {
         this._callSubscriber = observer;
-    }
-    
-}
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 9,
+                message: this._state.profilePage.newPostText,
+                name: 'Denis',
+                likesCounter: 23
+            };
+            this._state.profilePage.postData.unshift(newPost)
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state)
+        }
+        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state)
+        }
 
+    }
+
+}
 window.store = store;
 
 export default store;
