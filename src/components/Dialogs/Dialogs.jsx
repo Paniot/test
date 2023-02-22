@@ -3,32 +3,21 @@ import Dialog from './DialogElement/Dialog';
 import Message from './MessageElement/Message';
 import avatar from './avatar/logo.png'
 import React from 'react';
-import { addMessageActionCreator, updateMessageActionCreator } from '../../redux/store';
-
 
 
 const Dialogs = (props) => {
-    let store = props.store.getState().dialogsPage;
 
-    const dialogsElements = store.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id} avatar={avatar} />);
-    const messagesElements = store.messagesData.map(messagesText => <Message message={messagesText.message} avatar={avatar} />);
+    const dialogsElements = props.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id} avatar={avatar} />);
+    const messagesElements = props.messagesData.map(messagesText => <Message message={messagesText.message} avatar={avatar} />);
 
-
-    const onAddMessage = (e) => {
-        if ((e.keyCode === 13 && e.shiftKey === false)) {
-        props.store.dispatch(addMessageActionCreator())
-        }
-    }
 
     const onAddMessageButton = (e) => {
-        props.store.dispatch(addMessageActionCreator())
+        props.addMessageActionCreatorButton()
     }
 
     const onMessageChange = (e) => {
-            let text = e.target.value
-            let action = updateMessageActionCreator(text)
-            props.store.dispatch(action)
-        
+        let body = e.target.value
+        props.updateMessageActionCreator(body)
     }
 
     return (
@@ -42,7 +31,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={p.workingArea}>
                     <div>
-                        <textarea onChange={onMessageChange} onKeyDown={onAddMessage} value={store.newMessageText} />
+                        <textarea onChange={onMessageChange} value={props.newMessageText} />
                     </div>
                     <button onClick={onAddMessageButton}>Send Message</button>
                 </div>
