@@ -3,36 +3,48 @@ import Dialog from './DialogElement/Dialog';
 import Message from './MessageElement/Message';
 import avatar from './avatar/logo.png'
 import React from 'react';
+import { addMessageActionCreator, updateMessageActionCreator } from '../../redux/store';
+
 
 
 const Dialogs = (props) => {
+    let store = props.store.getState().dialogsPage;
 
-    let dialogsElements = props.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id} avatar={avatar} />);
+    const dialogsElements = store.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id} avatar={avatar} />);
+    const messagesElements = store.messagesData.map(messagesText => <Message message={messagesText.message} avatar={avatar} />);
 
-    let messagesElements = props.messagesData.map(messagesText => <Message message={messagesText.message} avatar={avatar} />);
 
-    let newMessageText = React.createRef()
-
-    const AddNewMessage = () => {
-        alert(newMessageText.current.value)
-        newMessageText.current.value = '';
+    const onAddMessage = (e) => {
+        if ((e.keyCode === 13 && e.shiftKey === false)) {
+        props.store.dispatch(addMessageActionCreator())
+        }
     }
 
- 
+    const onAddMessageButton = (e) => {
+        props.store.dispatch(addMessageActionCreator())
+    }
+
+    const onMessageChange = (e) => {
+            let text = e.target.value
+            let action = updateMessageActionCreator(text)
+            props.store.dispatch(action)
+        
+    }
+
     return (
         <div className={p.dialogs} >
             <div className={p.dialogsItems}>
                 {dialogsElements}
-            </div> 
+            </div>
             <div className={p.messages}>
-                <div>
+                <div className={p.messagesArea}>
                     {messagesElements}
                 </div>
                 <div className={p.workingArea}>
                     <div>
-                        <textarea  ref={newMessageText} />
+                        <textarea onChange={onMessageChange} onKeyDown={onAddMessage} value={store.newMessageText} />
                     </div>
-                    <button onClick={AddNewMessage} >Send Message</button>
+                    <button onClick={onAddMessageButton}>Send Message</button>
                 </div>
             </div>
         </div>

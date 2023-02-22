@@ -1,17 +1,22 @@
 import p from './PostInfo.module.css';
 import React from 'react';
+import { addPostActionCreator, updatePostActionCreator } from '../../../../../redux/store';
+
+
 
 const PostInfo = (props) => {
-  debugger
-  let newPostText = React.createRef();
+
+  const newPostText = React.createRef();
+
 
   const onAddPost = () => {
-    props.dispatch({type: 'ADD-POST'})
+    props.dispatch(addPostActionCreator())
   }
 
-  let onPostChange = () => {
+  const onPostChange = () => {
     let text = newPostText.current.value;
-    props.dispatch({type: 'UPDATE-NEW-POST-TEXT' ,newText: text} );
+    let action = updatePostActionCreator(text)
+    props.dispatch(action);
   }
 
   return (

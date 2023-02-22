@@ -1,4 +1,4 @@
-.dialogs{
+.dialogs {
     padding: 10px 10px;
     background-color: rgb(203, 205, 204);
     display: grid;
@@ -7,7 +7,7 @@
 
 
 
-.dialog{
+.dialog {
     color: black;
     text-decoration-line: none;
     cursor: alias;
@@ -17,7 +17,7 @@
     align-items: center;
 }
 
-.dialog:before{
+.dialog:before {
     background-image: url(./avatar/logo.png);
     background-size: cover;
     display: inline-block;
@@ -27,7 +27,7 @@
     margin-right: 15px;
 }
 
-.active{
+.active {
     color: gold;
     text-decoration-line: none;
     cursor: alias;
@@ -35,12 +35,12 @@
 }
 
 
-.message{
+.message {
     color: black;
     display: flex;
 }
 
-.message::before{
+.message::before {
     background-image: url(./avatar/logo.png);
     background-size: cover;
     display: inline-block;
@@ -49,13 +49,20 @@
     content: '';
 }
 
-.messages textarea{
+.messages textarea {
     margin-top: 20px;
     width: 720px;
+
 }
 
-.messages{
+.messages {
     position: relative;
+}
+
+.messagesArea {
+    max-height: 240px;
+    overflow: scroll;
+
 }
 
 .workingArea {
@@ -63,7 +70,7 @@
     position: absolute;
 }
 
-.workingArea button{
+.workingArea button {
     position: absolute;
     right: 0px;
 }
