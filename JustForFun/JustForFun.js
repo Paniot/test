@@ -50,6 +50,7 @@
 // }
 // console.log(nine(plus(eight())))
 
+let num = [1, 2, 3, 4, 5]
 
 const isOdd = (num) => {
     return num % 2 === 1;
@@ -59,7 +60,7 @@ const isOdd = (num) => {
     arr.filter(callback).length >= 2;
   }
 
-  console.log(atLeastTwo([1, 2, 3, 4, 5], isOdd))
+  console.log(atLeastTwo(num, isOdd))
 
   console.log(atLeastTwo([2, 4, 6], isOdd))
   

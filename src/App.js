@@ -24,9 +24,7 @@ const App = (props) => {
           <Route path='/dialogs' element={<DialogsContainer
             store={props.store} />} />
           <Route path='/profile' element={<Profile
-            store={props.store}
-            postPage={props.state.profilePage}
-            dispatch={props.dispatch}
+           
           />} />
           <Route path='/news' element={<News />} />
           <Route path='/music' element={<Music />} />
@@ -39,3 +37,8 @@ const App = (props) => {
 }
 
 export default App;
+
+
+// store={props.store}
+// postPage={props.state.profilePage}
+// dispatch={props.dispatch}
