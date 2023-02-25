@@ -1,4 +1,3 @@
-import p from './Settings.module.css'
 
 const Settings = () => {
     return (

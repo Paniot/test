@@ -6,12 +6,13 @@ import React from 'react';
 
 
 const Dialogs = (props) => {
+    
 
-    const dialogsElements = props.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id} avatar={avatar} />);
-    const messagesElements = props.messagesData.map(messagesText => <Message message={messagesText.message} avatar={avatar} />);
+    const dialogsElements = props.dialogsPage.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id} avatar={avatar} />);
+    const messagesElements = props.dialogsPage.messagesData.map(messagesText => <Message message={messagesText.message} avatar={avatar} />);
 
 
-    const onAddMessageButton = (e) => {
+    const onAddMessageButton = () => {
         props.addMessageActionCreatorButton()
     }
 
@@ -31,7 +32,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={p.workingArea}>
                     <div>
-                        <textarea onChange={onMessageChange} value={props.newMessageText} />
+                        <textarea onChange={onMessageChange} value={props.dialogsPage.newMessageText} />
                     </div>
                     <button onClick={onAddMessageButton}>Send Message</button>
                 </div>
