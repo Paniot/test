@@ -50,18 +50,29 @@
 // }
 // console.log(nine(plus(eight())))
 
-let num = [1, 2, 3, 4, 5]
+// let num = [1, 2, 3, 4, 5]
 
-const isOdd = (num) => {
-    return num % 2 === 1;
-  };
+// const isOdd = (num) => {
+//     return num % 2 === 1;
+//   };
 
-  const atLeastTwo = (arr, callback) => {
-    arr.filter(callback).length >= 2;
-  }
+//   const atLeastTwo = (arr, callback) => {
+//     arr.filter(callback).length >= 2;
+//   }
 
-  console.log(atLeastTwo(num, isOdd))
+//   console.log(atLeastTwo(num, isOdd))
 
-  console.log(atLeastTwo([2, 4, 6], isOdd))
+//   console.log(atLeastTwo([2, 4, 6], isOdd))
   
-  console.log(atLeastTwo([1, 2, 3, 4, 5], (t) => t > 3))
+//   console.log(atLeastTwo([1, 2, 3, 4, 5], (t) => t > 3))
+
+        //     CONCAT ARRAYS , STRINGS
+// let num0 = [1, 2, 3, 4, 5]
+// let num1 = [1, 2, 3, 4, 5]
+// let num2 = num0.concat(num1)
+// let num3 = [ ...num0, ...num1]
+// will be same, for strings we can use push also
+// let str1 = 'aaa';
+// let str2 = 'bbb';
+// let str3 = str1.concat(str2)
+// console.log(str3)

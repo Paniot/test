@@ -8,8 +8,8 @@ import React from 'react';
 const Dialogs = (props) => {
     
 
-    const dialogsElements = props.dialogsPage.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id} avatar={avatar} />);
-    const messagesElements = props.dialogsPage.messagesData.map(messagesText => <Message message={messagesText.message} avatar={avatar} />);
+    const dialogsElements = props.dialogsPage.dialogsData.map(dialog => <Dialog name={dialog.name} id={dialog.id} key={dialog.id}  avatar={avatar} />);
+    const messagesElements = props.dialogsPage.messagesData.map(messagesText => <Message message={messagesText.message} key={messagesText.id} avatar={avatar} />);
 
 
     const onAddMessageButton = () => {
