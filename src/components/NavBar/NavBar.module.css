@@ -1,6 +1,7 @@
 .nav {
     grid-area: n;
     background-color: rgb(222, 160, 88);
+    min-height: 957.23px;
 }
 
 .item a{
