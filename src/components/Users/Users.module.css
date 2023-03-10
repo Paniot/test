@@ -1,0 +1,84 @@
+
+.pages{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: relative;
+}
+
+.preloader{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%
+}
+
+span{
+    font-size: 25px;
+    padding: 1px 5px;
+    cursor: pointer;
+}
+
+.selectedPage{
+    font-size: 30px;
+    padding: 4px 10px;
+}
+
+.avatar{
+    width: 120px;
+    height: 120px;
+}
+
+.user{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+}
+
+.avatar_button button{
+   color: #f1f1f1;
+   background-color: #d11f1f;
+   border: none;
+   border-radius: 5px;
+   width: 120px;
+   height: 25px;
+   font-size: 18px;
+}
+
+.mainInfo{
+    border: 3px solid #f1f1f1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.name_status{
+    width: 650px;
+}
+
+.name{
+    padding: 10px 10px;
+    font-size: 22px;
+}
+
+.status{
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.location{
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #21b10d;
+    text-align: center;
+}
+
+.location_city{
+    margin-bottom: 6px;
+}
